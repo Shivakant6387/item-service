@@ -1,9 +1,14 @@
 package org.example.itemservice.repository;
 
+import org.example.itemservice.dto.ItemResponseDto;
 import org.example.itemservice.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public interface ItemRepository extends JpaRepository<Item,Long> {
+public interface ItemRepository extends JpaRepository<Item, Long> {
+
+    List<Item> findAllByTitle(String title);
 }
